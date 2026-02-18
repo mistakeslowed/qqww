@@ -32,6 +32,15 @@
 	IMMORTALITY LORD EDIT BY ZONE
 ]]
 
+-- game lock: set these IDs to your experience so the script only runs there
+-- replace the 0 values with your real IDs
+local allowedPlaceId=0
+local allowedUniverseId=0
+
+if (allowedPlaceId~=0 and game.PlaceId~=allowedPlaceId) or (allowedUniverseId~=0 and game.GameId~=allowedUniverseId) then
+	return
+end
+
 --no need to get and index the library tables with function names every time the script uses them
 local osclock=os.clock
 local tspawn=task.spawn
